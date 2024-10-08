@@ -1,0 +1,18 @@
+bool is_palindrome(std::string text)
+{
+  std::string reversed;
+  int size = text.size();
+  for(int i = 1; i <= size; i++)
+  {
+    reversed.push_back(text[size-i]);
+  }
+
+  if (reversed == text)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
