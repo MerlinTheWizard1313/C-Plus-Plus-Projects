@@ -1,0 +1,13 @@
+#include <iostream>
+//I hold a world first
+int main(){
+  std::cout << "M       M   B B B B  \n";
+  std::cout << "M M   M M   B       B\n";
+  std::cout << "M   M   M   B B B B  \n";
+  std::cout << "M       M   B       B\n";
+  std::cout << "M       M   B B B B  \n";
+}
+
+Compiler:
+$g++ initials.cpp -o Blocks
+$./Blocks
