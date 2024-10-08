@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+
+  int a, b, c;
+  double x1, x2;
+  bool end = false;
+
+  std::cout << "Please enter a: \n";
+  std::cin >> a;
+  if (a == 0)
+  {
+    std::cout << "Your equation is not quadratic!\n";
+  }
+  else
+  {
+    std::cout << "Please enter b: \n";std::cin >> b;
+    std::cout << "Please enter c: \n";
+    std::cin >> c;
+
+    x1 = ((-b) + std::sqrt((b * b) - (4 * a * c))) / (2 * a);
+    x2 = ((-b) - std::sqrt((b * b) - (4 * a * c))) / (2 * a);
+
+    if ((b == 0) && (c == 0))
+    {
+      std::cout << "Your equation is: " << a << "x^2" << " = 0.\n";
+    }
+    else if ((b != 0) && (c == 0))
+    {
+      std::cout << "Your equation is: " << a << "x^2 + " << b << "x" << " = 0.\n";
+    }
+    else if ((b == 0) && (c != 0))
+    {
+      std::cout << "Your equation is: " << a << "x^2 + " << c << " = 0.\n";
+    }
+    else
+    {
+      std::cout << "Your equation is: " << a << "x^2 + " << b << "x + " << c << " = 0.\n";
+    }
+
+    if (x1 != x1 && x2 == x2)
+    {
+      std::cout << "You have one solution which is:\nx = " << x2 << "\n";
+    }
+    else if (x2 != x2 && x1 == x1)
+    {
+      std::cout << "You have one solution which is:\nx = " << x1 << "\n";
+    }
+    else if (x1 != x1 && x2 != x2)
+    {
+      std::cout << "Your equation has no solutions.\n";
+    }
+    else
+    {
+      std::cout << "Your solutions are:\nx = " << x1 << "\nx = " << x2 << "\n";
+    }
+  }
+}
