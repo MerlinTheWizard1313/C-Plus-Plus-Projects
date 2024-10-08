@@ -1,0 +1,53 @@
+#include <iostream>
+
+int main() {
+
+  double inWeight, finWeight;
+  int planet;
+  std::string planetName;
+
+  std::cout << "What is your weight?\n";
+  std::cin >> inWeight;
+  std::cout << "Which planet are you fighting on?\n1: Mercury\n2: Venus\n3: Mars\n4: Jupiter\n5: Saturn\n6: Uranus\n7: Neptune\n";
+  std::cin >> planet;
+
+  switch (planet)
+  {
+    case 1:
+      finWeight = inWeight * 0.38;
+      planetName = "Mercury";
+      break;
+    case 2:
+      finWeight = inWeight * 0.91;
+      planetName = "Venus";
+      break;
+    case 3:
+      finWeight = inWeight * 0.38;
+      planetName = "Mars";
+      break;
+    case 4:
+      finWeight = inWeight * 2.34;
+      planetName = "Jupiter";
+      break;
+    case 5:
+      finWeight = inWeight * 1.06;
+      planetName = "Saturn";
+      break;
+    case 6:
+      finWeight = inWeight * 0.92;
+      planetName = "Uranus";
+      break;
+    case 7:
+      finWeight = inWeight * 1.19;
+      planetName = "Neptune";
+      break;
+    default:
+      std::cout << "You put in an invalid choice! Try again!\n";
+      planetName = "Invalid";
+      break;
+  }
+  if (planetName != "Invalid")
+  {
+    std::cout << "Your weight on " << planetName << " would be " << finWeight << ".\n";
+  }
+}
