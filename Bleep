@@ -1,0 +1,52 @@
+bleep.cpp
+#include <iostream>
+#include <string>
+#include "functions.hpp"
+int main(){
+  std::string word = "broccoli";
+  std::string text = "broccoli apple orange broccoli. damn thats some good broccoli";
+
+  bleep(word, text);
+  std::cout << text << "\n";
+
+  std::string word2 = "fuck";
+  std::string text2 = "fuck balls. I have really gone and fucked this all up, fuck me man";
+
+  bleep(word2, text2);
+  std::cout << text2 << "\n";
+}
+functions.hpp
+#include <string>
+
+void bleep(std::string word, std::string &text_to_bleep);
+functions.cpp
+#include <iostream>
+#include <string>
+
+void bleep(std::string word, std::string &text_to_bleep)
+{
+  int word_length = word.length();
+  int cutoff = text_to_bleep.length();
+  int found_check = -1;
+  std::string bleep_word = "";
+  for(int i = 0; i < word_length; i++)
+  {
+    bleep_word = bleep_word + "*";
+  }
+  //std::cout << bleep_word.length() << " " << word_length << "\n";
+
+  for(int found = 0; found < cutoff; )
+  {
+    found = text_to_bleep.find(word,found);
+    if(found != found_check)
+    {
+      //std::cout << found << "\n";
+      text_to_bleep.replace(found,word_length,bleep_word);
+      found = found + word_length;
+    }
+    else
+    {
+      found = cutoff;
+    }
+  }
+}
